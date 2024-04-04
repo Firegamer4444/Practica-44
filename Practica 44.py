@@ -18,8 +18,9 @@ def imprimir_datos(linea):
     print("correo: " , correo)
     
 # defino el metodo del menu
-def menu(fichero):
+def menu():
     while True:
+        fichero = open('usuarios.txt' , 'r' , encoding='utf-8')
         print("\n--- Opciones: ---")
         print("1. Buscar usuario por DNI")
         print("2. cerrar programa")
@@ -34,10 +35,8 @@ def menu(fichero):
                 print("\nVuelva a elejir una opcion")
         # si se elije la segunda opcion se cierra el programa
         elif opcion == '2':
+            fichero.close()
             return
-    
 
 
-fichero = open('usuarios.txt' , 'r' , encoding='utf-8')
-menu(fichero)
-fichero.close()
+menu()
